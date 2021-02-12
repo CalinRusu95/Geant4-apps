@@ -1,0 +1,31 @@
+#
+# Macro file for "TestEm7.cc"
+# (can be run in batch, without graphic)
+#
+/control/verbose 2
+/run/verbose 2
+/tracking/verbose 0
+#
+#
+
+#
+/testem/phys/addPhysics  emstandard_opt3
+#/testem/phys/addPhysics  ionGasModels
+#
+/run/initialize
+#
+/gps/particle ion
+/gps/ion 6 12 6
+/gps/energy 2.4 GeV
+#
+# step limit
+/run/setCut 0.5 mm
+#
+/run/printProgress 100
+#
+/analysis/setFileName c12
+/analysis/h1/set 2 100 80 90 mm
+/analysis/h1/set 3 100 80 90 mm
+#
+/run/beamOn 1000
+#

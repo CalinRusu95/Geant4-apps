@@ -1,0 +1,42 @@
+#
+# Macro file for "TestEm7.cc"
+# (can be run in batch, without graphic)
+#
+#
+/control/verbose 2
+/run/verbose 2
+#
+/testem/phys/addPhysics   emstandard_opt0
+#/testem/phys/addPhysics  emstandard_opt3
+#/testem/phys/addPhysics  emstandard_opt4
+
+#
+/run/initialize
+#
+#/gps/particle proton
+#/gps/particle alpha
+/gps/particle ion
+/gps/ion 6 12 6
+
+/gps/pos/type Plane
+/gps/pos/shape Circle
+/gps/pos/radius 1.5 mm
+/gps/ene/type Gauss
+/gps/ene/mono 20. MeV
+/gps/ene/sigma 5. keV
+#
+# step limit
+#/run/setCut 0.1 mm
+/run/setCut 1 mm
+#/testem/stepMax 1 um
+
+#
+/run/printProgress 1
+#
+#/analysis/setFileName testem8
+#/analysis/h1/set 1 50 0 50 um
+#/analysis/h1/set 2 50 0 50 um
+#/analysis/h1/set 3 50 0 50 um
+#
+/run/beamOn 10000
+#

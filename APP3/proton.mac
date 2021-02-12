@@ -1,0 +1,88 @@
+#
+# Macro file for "TestEm7.cc"
+# (can be run in batch, without graphic)
+#
+#
+/control/verbose 2
+#
+/run/verbose 1
+#/event/verbose 1
+#/tracking/verbose 1
+#
+#/testem/phys/addPhysics   emstandard_opt0
+#/testem/phys/addPhysics  emstandard_opt3
+/testem/phys/addPhysics  emstandard_opt4
+
+#
+/run/initialize
+#
+/gps/particle proton
+#/gps/particle alpha
+#/gps/particle ion
+
+#/gps/ion 5 11 5
+#/gps/ion 3 7 3
+#/gps/ion 6 12 6
+
+/gps/pos/type Plane
+/gps/pos/shape Circle
+/gps/pos/radius 1.5 mm
+/gps/ene/type Gauss
+
+/gps/ene/mono 3.02 MeV
+#/gps/ene/mono 32. MeV
+#/gps/ene/mono 56. MeV
+#/gps/ene/mono 48. MeV
+#/gps/ene/mono 8100 keV
+
+/gps/ene/sigma 15. keV
+#/gps/ene/sigma 50 keV
+#
+# step limit
+#/run/setCut 0.1 mm
+#/run/setCut 1 mm
+#/testem/stepMax 1 um
+
+#
+/run/printProgress 1
+#
+#/analysis/setFileName testem8
+#/analysis/h1/set 1 50 0 50 um
+#/analysis/h1/set 2 50 0 50 um
+#/analysis/h1/set 3 50 0 50 um
+#
+#0.02813
+
+#/score/create/realWorldLogVol fLTally
+/score/create/cylinderMesh Mesh1
+/score/mesh/cylinderSize 3 0.1 cm 	#define cylinder withr adiuse=10 cm and half lenght=10 cm
+
+#/score/create/boxMesh Mesh1
+#/score/mesh/boxSize 3. 3. 3. m
+
+/score/mesh/nBin 1 1 100         	#number of mesh in three direction
+/score/mesh/translate/xyz 0. 0. 0. m
+
+/score/quantity/nOfTrack flux
+/score/quantity/energyDeposit eDep
+
+#/score/quantity/nOfStep nOfStepGamma
+#/score/filter/particle gammaFilter gamma
+#/score/quantity/nOfStep nOfStepEMinus
+#/score/filter/particle eMinusFilter e-
+#/score/quantity/nOfStep nOfStepEPlus
+#/score/filter/particle ePlusFilter e+
+
+
+
+/score/close
+
+/score/dumpQuantityToFile Mesh1 eDep eDep.csv
+/score/dumpQuantityToFile Mesh1 flux flux.csv
+#/score/dumpQuantityToFile Mesh1 nOfStepGamma 1.csv
+#/score/dumpQuantityToFile Mesh1 nOfStepEMinus 2.csv
+#/score/dumpQuantityToFile Mesh1 nOfStepEPlus 3.csv
+
+#
+/run/beamOn 1000000
+#
