@@ -1,0 +1,30 @@
+#
+# Macro file for "TD3MV.cc"
+# (can be run in batch, without graphic)
+#
+#
+/control/verbose 0
+#
+/run/verbose 1
+#/event/verbose 0
+#/tracking/verbose 1
+#
+/run/initialize
+#
+/gps/pos/type Plane
+/gps/pos/shape Circle
+/gps/pos/radius 1.5 mm
+/gps/ene/type Gauss
+#
+/gps/particle proton
+/gps/ene/mono 3.02 MeV
+#/gps/ene/mono 32. MeV
+#/gps/ene/mono 56. MeV
+#/gps/ene/mono 48. MeV
+#/gps/ene/mono 8100 keV
+#
+/gps/ene/sigma 5. keV
+#/gps/ene/sigma 50 keV
+#
+/run/beamOn 10000
+#
