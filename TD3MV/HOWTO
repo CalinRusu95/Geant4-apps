@@ -1,5 +1,0 @@
-cd build
-
-cmake -DGeant4_DIR=/home/paul/geant/geant4.10.01.p01-install/lib/Geant4-10.1.1/ /home/paul/work/TD3MV
-	where the first parameter specifies where is Geant4Config.cmake and the second parameter
-	specifies the directory with CMakeLists.txt, main(), src/ and include/
