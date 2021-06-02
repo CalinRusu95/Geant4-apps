@@ -1,0 +1,22 @@
+0
+2
+2
+1
+6
+4
+48
+15
+300
+1000
+
+PARAMETER EXPLANATION:
+1) Visualization off/on (0/1)
+2) Scattering foil material index (1: Au; 2: Al; 0: vacuum)
+3) Scattering foil thickness (*= um)
+4) MPE material index (1: Mylar; 2: PE; 0: vacuum)
+5) MPE thickness (*= um)
+6) Particle (0: proton; 1: alpha, 2: C12+, 3: Li, 4: B)
+7) Beam energy (*= MeV)
+8) Beam spread (*= keV)
+9) Number of layers
+10) Number of events
